@@ -25,6 +25,21 @@ The conversion factor used is approximately 111,320 meters per degree of latitud
    - Click the "Convert to Degrees" button.
    - The result will be displayed below the button.
 
+
+## How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/a-graziano/degrees-meters-converter.git
+
+2. Navigate to project directory
+     ```bash
+      cd degrees-meters-converter
+      ```
+
+3. Open the index.html file in your web browser to use the converter.
+
+
 ## Code Structure
 
 - **HTML**: The structure of the web page, including input fields, buttons, and result display areas.
@@ -71,15 +86,3 @@ The conversion factor used is approximately 111,320 meters per degree of latitud
 </body>
 </html>
 
-
-## How to Run
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/degrees-meters-converter.git
-
-2. Navigate to project directory
-  ```bash
-cd degrees-meters-converter
-
-3. Open the index.html file in your web browser to use the converter.
