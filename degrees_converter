@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degrees and Meters Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        h2 {
+            color: #0056b3;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        p {
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Degrees and Meters Converter</h1>
+        
+        <div>
+            <h2>Convert Degrees to Meters</h2>
+            <label for="degreesInput">Degrees:</label>
+            <input type="number" id="degreesInput" placeholder="Enter degrees">
+            <button onclick="convertDegreesToMeters()">Convert to Meters</button>
+            <p id="degreesResult"></p>
+        </div>
+
+        <div>
+            <h2>Convert Meters to Degrees</h2>
+            <label for="metersInput">Meters:</label>
+            <input type="number" id="metersInput" placeholder="Enter meters">
+            <button onclick="convertMetersToDegrees()">Convert to Degrees</button>
+            <p id="metersResult"></p>
+        </div>
+    </div>
+
+    <script>
+        // Approximate conversion factor from degrees to meters
+        const DEG_TO_METERS = 111320; // meters per degree of latitude
+
+        function convertDegreesToMeters() {
+            const degrees = parseFloat(document.getElementById('degreesInput').value);
+            if (isNaN(degrees)) {
+                document.getElementById('degreesResult').textContent = 'Please enter a valid number.';
+                return;
+            }
+            const meters = degrees * DEG_TO_METERS;
+            document.getElementById('degreesResult').textContent = `${degrees} degrees is approximately ${meters.toFixed(2)} meters.`;
+        }
+
+        function convertMetersToDegrees() {
+            const meters = parseFloat(document.getElementById('metersInput').value);
+            if (isNaN(meters)) {
+                document.getElementById('metersResult').textContent = 'Please enter a valid number.';
+                return;
+            }
+            const degrees = meters / DEG_TO_METERS;
+            document.getElementById('metersResult').textContent = `${meters} meters is approximately ${degrees.toFixed(6)} degrees.`;
+        }
+    </script>
+</body>
+</html>
